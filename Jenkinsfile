@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy Image') {
             steps {
               script {
-                    // Prompt for input approval
+                    // Prompt for input approval - the user should accpet the deployment manually
                     input("Deploy to production?") 
                 }
                 withCredentials([usernamePassword(credentialsId: '5518b6f1-d4be-455e-a97c-fcc5fc0bf9fa', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
